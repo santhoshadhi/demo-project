@@ -1,22 +1,26 @@
-import { useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import './App.css';
 import { MovieList } from "./MovieList";
 import {InitialfilmList} from "./InitialfilmList"
 import { Addfilm } from "./Addfilm";
 import { Edit } from "./Edit";
-import { useParams } from "react-router-dom";
+
+//import { useParams } from "react-router-dom";
 
 
 
 
 export default function App() { 
 
-
-  const [ movieList, setmovieList ] = useState(InitialfilmList);  
-
+ 
+  const [movieList, setmovieList] = useState(InitialfilmList);  
+  
+  
   
   return (
+
+          
     <div className="App"> 
       
       <ul>
@@ -78,3 +82,51 @@ export default function App() {
 }
 
 
+
+
+
+
+// const context = createContext(null); 
+// const [mode,setmode]=useState("light")
+//       const styles = {
+//         backround :mode==="light"?"black":"white"
+//       };
+// const Info=()=>  {
+ 
+    
+//   return (
+   
+//     <context.Provider value={[mode,setmode]}>
+//       <div style={styles} className="black-container">
+//           <List />
+//         </div>
+//     </context.Provider>
+//   )
+// }
+
+// const List=()=> {
+//   <ul>
+//     <ListItem value="Light"/>
+//     <ListItem value="Dark"/>
+//   </ul>
+// }
+
+
+// const ListItem=({value})=> {
+//   <ul>
+//     <Button value={value}/>
+//   </ul>
+// }
+
+// const Button=({ value })=> {
+//   const [mode, setmode] = useContext(context);
+//   const styles = {
+//     backround: !(mode === "light") ? "black" : "white",
+//     color: mode === "light" ? "black" : "white"
+//   };
+
+//   return (
+//     <button style={styles}
+//       onClick={() => setmode(value === "Light" ? "light" : "dark")}>{value}</button>
+//   )
+// }

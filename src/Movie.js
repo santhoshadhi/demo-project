@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
+//import { useHistory } from "react-router-dom";
 import { Counter } from "./Counter";
 
 
 export function Movie({ poster, name, rating, summary, deleteButton, editButton,infoButton}) {
-  const history = useHistory();
+  //const history = useHistory();
   const logic = {
     color: rating >= 8 ? "green" : "red", //conditional stylingn
   };
