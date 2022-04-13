@@ -5,6 +5,15 @@ import { MovieList } from "./MovieList";
 import {InitialfilmList} from "./InitialfilmList"
 import { Addfilm } from "./Addfilm";
 import { Edit } from "./Edit";
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import { useHistory } from "react-router-dom";
+
 
 //import { useParams } from "react-router-dom";
 
@@ -15,7 +24,7 @@ export default function App() {
 
  
   const [movieList, setmovieList] = useState(InitialfilmList);  
-  
+  const history = useHistory();
   
   
   return (
@@ -23,7 +32,7 @@ export default function App() {
           
     <div className="App"> 
       
-      <ul>
+      {/* <ul>
         <li>
           <Link to="/">Home</Link>
         </li>
@@ -32,7 +41,16 @@ export default function App() {
           
         </li>
       
-      </ul>
+      </ul> */}
+
+
+      <AppBar position="static">
+        <Toolbar>
+          
+          <Button color="inherit" onClick={() => history.push("/")}>Home</Button>
+          <Button  color="inherit" onClick={() => history.push("/film")}>Films</Button>
+        </Toolbar>
+      </AppBar>
 
       
       <Switch>
