@@ -48,7 +48,8 @@ export default function App() {
         <Toolbar>
           
           <Button color="inherit" onClick={() => history.push("/")}>Home</Button>
-          <Button  color="inherit" onClick={() => history.push("/film")}>Films</Button>
+          <Button color="inherit" onClick={() => history.push("/movies")}>Films</Button>
+          <Button  color="inherit" onClick={() => history.push("/movies/add")}>Add film</Button>
         </Toolbar>
       </AppBar>
 
@@ -60,19 +61,24 @@ export default function App() {
       
         
 
+        <Route exact path="/movies/add">
+          <Addfilm />
+           
+        </Route>
 
-        <Route exact path="/film">
-            <Addfilm movieList={movieList} setmovieList={setmovieList} />
-            <MovieList movieList={movieList} setmovieList={setmovieList} />
+
+        <Route exact path="/movies">
+           
+            <MovieList  />
         </Route>
 
         
-        <Route exact path="/film/info/:id">
+        <Route exact path="/movies/info/:id">
           hi
         </Route>
 
-        <Route exact path="/film/edit/:id">
-          <Edit movieList={movieList} setmovieList={setmovieList} />
+        <Route exact path="/movies/edit/:id">
+          <Edit />
         </Route>
         
       
@@ -148,3 +154,5 @@ export default function App() {
 //       onClick={() => setmode(value === "Light" ? "light" : "dark")}>{value}</button>
 //   )
 // }
+
+
